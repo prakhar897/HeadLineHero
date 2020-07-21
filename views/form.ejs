@@ -1,78 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>IDEA</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Aldi Duzha" />
+    <meta name="description" content="Free Bulma Login Template, part of Awesome Bulma Templates" />
+    <meta name="keywords" content="bulma, login, page, website, template, free, awesome" />
+    <title>Bulma Login - Free Bulma Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/styles_login.css" />
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
-    <div class="container">
+    <%- include('partials/navbar.ejs') %>
 
-        <form action="/form" class="" method="post">
-            <div class="form-group">
-                <label>What is your Product?</label>
-                <input type="text" name="productName" class="form-control" id="exampleInputEmail" placeholder="Headlime, Sketch" />
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <div class="box">
+                        <form action="/form" class="" method="post">
+
+                            <div class="field">
+                                <label class="label">What is your Product?</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="Product" placeholder="Headlime, Sketch" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Who's your audience?</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="Audience" placeholder="Fathers, Doctors">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">What does your audience want?</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="Desired_Outcome"
+                                        placeholder="Bigger Muscles, Higher Conversion Rate">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">What solution do you offer?</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="Solution"
+                                        placeholder="Healthy Food, Faster Website">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">What problem does your audience have?</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="Problem"
+                                        placeholder="Low Conversion Rate, High Operating Cost">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Who is an authority in your industry?</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="Authority"
+                                        placeholder="Google, Amazon, Influencers">
+                                </div>
+                            </div>
+                            <div>
+                                <input class="button is-block is-info is-large is-fullwidth" type="submit"
+                                    value="Next Step"><br />
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Who's your audience?</label>
-                <input type="text" name="audience" class="form-control form-control-user" id="exampleInputPassword"
-                    placeholder="Fathers, Doctors">
-            </div>
-            <div class="form-group">
-                <label>What does your audience want?</label>
-                <input type="text" name="audienceNeed" class="form-control form-control-user" id="exampleInputPassword"
-                    placeholder="Bigger Muscles, Higher Conversion Rate">
-            </div>
-            <div class="form-group">
-                <label>What solution do you offer?</label>
-                <input type="text" name="solution" class="form-control form-control-user" id="exampleInputPassword"
-                    placeholder="Healthy Food, Faster Website">
-            </div>
-            <div class="form-group">
-                <label>What problem does your audience have?</label>
-                <input type="text" name="problem" class="form-control form-control-user" id="exampleInputPassword"
-                    placeholder="Low Conversion Rate, High Operating Cost">
-            </div>
-            <div class="form-group">
-                <label>Who is an authority in your industry?</label>
-                <input type="text" name="authority" class="form-control form-control-user" id="exampleInputPassword"
-                    placeholder="Google, Amazon, Influencers">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-user btn-block" value="Next Step" />
-            </div>
-        </form>
+        </div>
+    </section>
 
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>
+    <%- include('partials/footer.ejs') %>

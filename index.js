@@ -6,6 +6,7 @@ var dotenv = require('dotenv');
 var User = require('./models/user');
 var bcrypt = require('bcrypt');
 var expressSession = require('express-session');
+var dataFields = require('./data.json')
 
 
 
@@ -153,14 +154,23 @@ app.get('/form',function(req,res,next){
 });
 
 app.post('/form',function(req,res,next){
-    console.log(req.body.productName);
-    console.log(req.body.audience);
-    console.log(req.body.audienceNeed);
-    console.log(req.body.solution);
-    console.log(req.body.problem);
-    console.log(req.body.authority);
-    res.render('app');
+    arr = []
+    console.log(dataFields);
+    for(i in dataFields.headlines){
+        str = dataFields.headlines[i];
+        for(j in dataFields.fields){
+            str = str.replace("{"+dataFields.fields[j]+"}",req.body[dataFields.fields[j]]);
+        }
+        arr.push(str);
+    }
+    console.log(arr);
+    res.render('app' , quotes = arr);
 });
+
+app.get('/test',function(req,res,next){
+	res.render('login2');
+});
+
 
 
 
@@ -190,14 +200,14 @@ app.get('/logout',function(req,res,next){
 app.post('/login',
     passport.authenticate('local', { failureRedirect: '/login' }),
     function(req, res) {
-        res.redirect('/main');
+        res.redirect('/form');
     }
 );
 
 app.post('/signup',
-    passport.authenticate('signup-local', { failureRedirect: '/' }),
+    passport.authenticate('signup-local', { failureRedirect: '/signup' }),
     function(req, res) {
-        res.redirect('/main');
+        res.redirect('/form');
     }
 );
 

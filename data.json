@@ -1,0 +1,27 @@
+{
+    "headlines": [
+        "Tired of {Problem}? Get started with {Solution} Today!",
+        "{Number} Ideas You can steal from {Authority}",
+        "Let {Product} Work on Your {Problem} for Just {Period} - And You’ll See The Difference",
+        "Want {Desired_Outcome}? Get {Solution} Now",
+        "The Best Way for {Audience} to Get {Desired_Outcome}",
+        "To the {Audience} Who Will Settle for Nothing Less Than {Desired_Outcome}",
+        "{Audience}: It's time to stop {Problem}. Use {Solution}",
+        "The Biggest (And Easiest) Secret of {Desired_Outcome}",
+        "Make {Desired Outcome} That Matter",
+        "{Number} of Authorities is Right/Wrong About {Desired_Outcome}",
+        "{Authority} show you how to {Desired_Outcome}",
+        "Start saving money on {Desired_Outcome}",
+        "{Problem} Shouldn't Be This Hard",
+        "Don't Make These {Number} {Problem} Mistakes"
+    ],
+    "fields": [
+        "Problem",
+        "Solution",
+        "Authority",
+        "Audience",
+        "Desired_Outcome",
+        "Product",
+        "Number"
+    ]
+}

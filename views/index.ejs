@@ -1,87 +1,258 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header.ejs') %>
 
-<head>
+<%- include('partials/navbar.ejs') %>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>IDEA</title>
-
-  <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/creative.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">HeadLineHero</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/signup">SignUp</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Create Headlines Like Copywriting Experts, Without Writing Them</h1>
-          <hr class="divider my-4">
+<!-- Hero -->
+<section id="hero" class="hero is-medium">
+    <div class="hero-body columns">
+        <div class="column">
+            <div class="container">
+                <h1 class="has-text-green is-size-1 is-size-3-mobile">
+                    On Point Headlines that will make you a copyright master too.
+                </h1>
+                <p class="has-text-green">
+                    Get access to headlines that not just generates the most traffic, but also gets most shares on
+                    social media.
+                </p>
+                <a class="btn has-mustard-bg is-size-7 a-menu" href="/form">
+                    try it now
+                </a>
+            </div>
         </div>
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Get access to high converting headlines. HeadlineHero generates hundreds of headlines for you, simply by answering a few questions.</p>
-          <a class = "btn btn-primary btn-xl" href="/form"> Get Started </a>
+        <div class="column">
+            <video width="125%" autoplay loop>
+                <source src="img/movie.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
         </div>
-        
-      </div>
     </div>
-  </header>
+</section>
+<!-- END Hero -->
 
-  <!-- Footer -->
-  <footer class="bg-light py-5">
+<!-- Twitter Feed -->
+<section id="twitter-feed" class="section has-white-mustard-gradient">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+        <div class="columns">
+            <div class="column">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-left">
+                            <figure class="image is-64x64 ">
+                                <img src="img/twitter-profile-guy.jpg" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Some guy</strong> <small>@someguy</small> <small>5m</small>
+                                    <br>
+                                    Frist time I used @fancyapp, was like the first time I listened to The Beatles.
+                                    Christmas came early, I guess.
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="reply">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-reply" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="retweet">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-retweet" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="like">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-heart" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-left">
+                            <figure class="image is-64x64 ">
+                                <img src="img/twitter-profile-girl.jpg" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Some girl</strong> <small>@somegirl</small> <small>5m</small>
+                                    <br>
+                                    Fancy App is the answer to all your problems, all praise the #fancyappgod!
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="reply">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-reply" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="retweet">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-retweet" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="like">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-heart" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <p class="is-size-7 has-text-centered">See more at #fancyapp</p>
     </div>
-  </footer>
+</section>
+<!-- END Twitter Feed -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Features -->
+<section id="features" class="section has-mustard-bg">
+    <div class="container">
+        <div class="columns reverse-row-order">
+            <div class="column">
+                <h3 class="is-size-3">
+                    Open Source, all the way
+                </h3>
+                <p class="has-text-green paragraph">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum.
+                </p>
+            </div>
+            <div class="column">
+                <img class="feature-img" src="img/feature1.png" alt="feature" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+            <div class="column">
+                <img class="feature-img" src="img/feature2.png" alt="feature" />
+            </div>
+            <div class="column">
+                <h3 class="is-size-3">
+                    Second Exciting Feature</h3>
+                <p class="has-text-green paragraph">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum.
+                </p>
+            </div>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns reverse-row-order">
 
-</body>
+            <div class="column">
+                <h3 class="is-size-3">
+                    Third Feature, Wow</h3>
+                <p class="has-text-green paragraph">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum.
+                </p>
+            </div>
+            <div class="column">
+                <img class="feature-img" src="img/feature3.png" alt="feature" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END Features -->
 
-</html>
+<!-- Featured -->
+<section class="section">
+    <h2 class="has-text-centered"> Featured In </h2>
+    <div class="columns">
+        <div class="column">
+            <img src="img/covenent.svg" />
+        </div>
+        <div class="column">
+            <img src="img/covenent.svg" />
+        </div>
+        <div class="column">
+            <img src="img/covenent.svg" />
+        </div>
+        <div class="column">
+            <img src="img/covenent.svg" />
+        </div>
+    </div>
+</section>
+<!-- END Featured -->
+
+<!-- Pricing  -->
+<section id="features" class="section section-feature-grey is-medium">
+    <div class="container">
+        <div class="title-wrapper has-text-centered">
+            <h2 class="title is-2">Pricing</h2>
+            <h3 class="subtitle is-5 is-muted">Get the power of a copywriter for life, without paying their $100 hourly
+                rate.</h3>
+            <div class="divider is-centered"></div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="columns">
+                <div class="column is-one-third">
+                    <div class="feature-card is-bordered has-text-centered revealOnScroll delay-1"
+                        data-animation="fadeInLeft">
+                        <div class="card-title">
+                            <h4>Monthly</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Cancel any time</p>
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="" class="button btn-align-md accent-btn raised">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="feature-card is-bordered has-text-centered revealOnScroll delay-2"
+                        data-animation="fadeInLeft">
+                        <div class="card-title">
+                            <h4>Monthly</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Cancel any time</p>
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="" class="button btn-align-md accent-btn raised">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="feature-card is-bordered has-text-centered revealOnScroll delay-3"
+                        data-animation="fadeInLeft">
+                        <div class="card-title">
+                            <h4>Monthly</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Cancel any time</p>
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="" class="button btn-align-md accent-btn raised">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END Pricing -->
+
+<%- include('partials/footer.ejs') %>
