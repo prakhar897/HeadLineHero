@@ -6,12 +6,12 @@ var dotenv = require('dotenv');
 var User = require('./models/user');
 var bcrypt = require('bcrypt');
 var expressSession = require('express-session');
-var dataFields = require('./data.json')
+var passport = require('passport');
 
 
 
 dotenv.config();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine","ejs");
 app.use(express.static(__dirname+ "/public"));
 app.use(expressSession({
@@ -19,6 +19,16 @@ app.use(expressSession({
 	resave: false,
 	saveUninitialized:false 
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function(req,res,next){
+	res.locals.currentUser = req.user;
+	next();
+});
+
+require('./config/passport')(passport); // pass passport for configuration
 
 
 var url = process.env.DATABASEURL;
@@ -79,138 +89,9 @@ app.post('/cancel-sub' , (req,res)=>{
     
 });
 
-
-
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use('local',new LocalStrategy({
-    usernameField: "email",
-    passwordField: "password"
-}, function(email, password, next) {
-    User.findOne({
-        email: email
-    }, function(err, user) {
-        if (err) return next(err);
-        if (!user || !bcrypt.compareSync(password, user.passwordHash)) {
-            return next('Email or password incorrect');
-        }
-        next(null, user);
-    })
-}));
-
-passport.use('signup-local',new LocalStrategy({
-    usernameField: "email",
-    passwordField: "password"
-}, function(email, password, next) {
-    User.findOne({
-		email:email
-	},function(err,user){
-		if(err) return next(err);
-		if(user) return next("User already exists");
-		let newUser = new User({
-			email: email,
-			passwordHash: bcrypt.hashSync(password,10)
-		});
-		newUser.save(function(err){
-			next(err,newUser);
-		});
-	});
-}));
-
-passport.serializeUser(function(user,next){
-	next(null,user._id); 
-});
-
-passport.deserializeUser(function(id,next){
-	User.findById(id,function(err,user){
-		next(err,user);
-	});
-});
-
-
-
-
-app.get('/', function (req, res) {
-  res.render('index' , {title: "Saas App"});
-});
-
-app.get('/main',function(req,res){
-	res.render('main');
-});
-
-app.get('/login',function(req,res,next){
-	res.render('login');
-});
-
-app.get('/signup',function(req,res,next){
-	res.render('signup');
-});
-
-app.get('/form',function(req,res,next){
-	res.render('form');
-});
-
-app.post('/form',function(req,res,next){
-    arr = []
-    console.log(dataFields);
-    for(i in dataFields.headlines){
-        str = dataFields.headlines[i];
-        for(j in dataFields.fields){
-            str = str.replace("{"+dataFields.fields[j]+"}",req.body[dataFields.fields[j]]);
-        }
-        arr.push(str);
-    }
-    console.log(arr);
-    res.render('app' , quotes = arr);
-});
-
-app.get('/test',function(req,res,next){
-	res.render('login2');
-});
-
-
-
-
-app.get('/billing', function (req, res, next) {
-
-    stripe.checkout.sessions.create({
-        customer_email: req.user.email,
-        payment_method_types: ['card'],
-        subscription_data: {
-            items: [{
-                plan: process.env.STRIPE_PLAN,
-            }],
-        },
-        success_url:process.env.BASE_URL + '/billing?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: process.env.BASE_URL + '/billing',
-    }, function(err, session) {
-        if (err) return next(err);
-        res.render('billing', {STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY, sessionId: session.id, subscriptionActive: req.user.subscriptionActive})
-    });
-})
-
-app.get('/logout',function(req,res,next){
-    req.logout();
-    res.redirect('/');
-});
-
-app.post('/login',
-    passport.authenticate('local', { failureRedirect: '/login' }),
-    function(req, res) {
-        res.redirect('/form');
-    }
-);
-
-app.post('/signup',
-    passport.authenticate('signup-local', { failureRedirect: '/signup' }),
-    function(req, res) {
-        res.redirect('/form');
-    }
-);
-
+app.use('/', require('./routes/api'));
+app.use('/', require('./routes/billing'));
+require('./routes/auth.js')(app, passport);
 
 app.listen(process.env.PORT,function(req,res){
 	console.log(`Listening on port ${process.env.PORT}`);

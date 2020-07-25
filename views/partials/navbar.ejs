@@ -1,6 +1,6 @@
 <!-- Navigation-->
-<section id="hero" class="hero is-medium>
-    <div class=" hero-head">
+<section id="hero" class="hero is-medium">
+    <div class="hero-head">
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-brand">
@@ -10,26 +10,36 @@
                 </div>
 
                 <div class="navbar-menu">
-
-                    <div class="navbar-end">
-                        <a class="a-menu is-size-7 navbar-item" href="/billing">
-                            Buy Now
-                        </a>
-                        <a class="a-menu is-size-7 navbar-item" href="/signup">
-                            SignUp
-                        </a>
-                        <a class="a-menu is-size-7 navbar-item" href="/login">
-                            Login
-                        </a>
-                    </div>
+                    <% if(!currentUser){ %>
+                        <div class="navbar-end">
+                            <a class="a-menu is-size-7 navbar-item" href="/billing">
+                                Buy Now
+                            </a>
+                            <a class="a-menu is-size-7 navbar-item" href="/signup">
+                                SignUp
+                            </a>
+                            <a class="a-menu is-size-7 navbar-item" href="/login">
+                                Login
+                            </a>
+                        </div>
+                        <% } else {%>
+                            <div class="navbar-end">
+                                <a class="a-menu is-size-7 navbar-item" href="#">
+                                    <%=currentUser.email%>
+                                </a>
+                                <a class="a-menu is-size-7 navbar-item" href="/logout">
+                                Logout
+                            </a>
+                            </div>
+                            <% } %>
                 </div>
                 <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                     <span></span>
-                    <span></span>
-                    <span></span>
+                <span></span>
+                <span></span>
                 </span>
             </div>
         </nav>
-        </div>
-    </section>
-    <!-- END Navigation -->
+    </div>
+</section>
+<!-- END Navigation -->

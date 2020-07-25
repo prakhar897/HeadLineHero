@@ -5,16 +5,22 @@ Colours
 #1E4132 - Green
 */
 
+:root {
+    --color-1: #FFFFFF;
+    --color-2: #FDBB34;
+    --color-3: #1E4132;
+}
+
 .has-text-green {
-    color: #1E4132 !important;
+    color: var(--color-3) !important;
 }
 
 .has-mustard-bg {
-    background-color: #FDBB34;
+    background-color: var(--color-2);
 }
 
 .has-green-bg {
-    background-color: #1E4132;
+    background-color: var(--color-3);
 }
 
 .has-white-mustard-gradient {
@@ -22,7 +28,7 @@ Colours
     background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(253, 187, 52, 1) 50%, rgba(253, 187, 52, 1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(253, 187, 52, 1) 50%, rgba(253, 187, 52, 1) 100%);
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(253, 187, 52, 1) 50%, rgba(253, 187, 52, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fdbb34", GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="var(--color-1)", endColorstr="var(--color-2)", GradientType=1);
 }
 
 @media(max-width: 1024px) {
@@ -31,22 +37,23 @@ Colours
         background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(253, 187, 52, 1) 25%, rgba(253, 187, 52, 1) 100%);
         background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(253, 187, 52, 1) 25%, rgba(253, 187, 52, 1) 100%);
         background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(253, 187, 52, 1) 25%, rgba(253, 187, 52, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#fdbb34", GradientType=1);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="var(--color-1)", endColorstr="var(--color-2)", GradientType=1);
     }
 }
+
 
 /*
 Typography 
 */
 
 @import url('https://fonts.googleapis.com/css?family=Calistoga|Open+Sans&display=swap');
-
 h1,
 h2,
 h3 {
     font-family: 'Calistoga';
     margin-bottom: 10px;
 }
+
 p,
 a,
 span {
@@ -57,15 +64,19 @@ span {
 @media(max-width: 767px) {
     p {
         max-width: 90%;
-    margin: 0 auto;
+        margin: 0 auto;
     }
 }
 
+ul {
+    text-align: left;
+}
 
 
 /*
 Links
 */
+
 .a-menu {
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -75,13 +86,15 @@ Links
 
 .a-menu:hover {
     opacity: 1;
-    color: #1E4132 !important;
+    color: var(--color-3) !important;
     text-decoration: none;
 }
+
 
 /* 
 Wrapper
 */
+
 .section .container,
 .hero .hero-body,
 .hero .hero-head {
@@ -90,9 +103,11 @@ Wrapper
     margin: 0 auto;
 }
 
+
 /*
 Some aesthetic improvements
 */
+
 nav {
     padding-top: 20px;
     max-height: 50px;
@@ -103,17 +118,20 @@ nav {
     line-height: 1.5em;
 }
 
+
 /*
 Hero
 */
+
 .burger {
     position: absolute;
     top: 0;
     right: 0;
 }
+
 @media(min-width: 1024px) {
     .hero-body {
-        background-color: #ffffff;
+        background-color: var(--color-1);
         background-size: 30%;
         background-position: 80% 50%;
         background-repeat: no-repeat;
@@ -123,9 +141,11 @@ Hero
     }
 }
 
+
 /*
 Button
 */
+
 .btn {
     margin-top: 20px;
     border-radius: 50px;
@@ -143,12 +163,15 @@ Button
     opacity: 0.8;
 }
 
+
 /*
 Twitter Feed
 */
+
 #twitter-feed .columns {
     margin: 0px;
 }
+
 @media(max-width: 1024px) {
     margin: 0px 10px;
 }
@@ -160,20 +183,23 @@ Twitter Feed
 
 .box .icon {
     margin-top: -10px;
-    color: #FDBB34 !important;
+    color: var(--color-2) !important;
     transition: color 0.5s ease;
 }
 
 .box .icon:hover {
-    color: #1E4132 !important;
+    color: var(--color-3) !important;
 }
+
 #twitter-feed .container .is-size-7 {
     padding: 20px;
 }
 
+
 /*
 Features
 */
+
 .feature-img {
     max-width: 60%;
     margin: 0 auto;
@@ -198,45 +224,58 @@ Features
     }
 }
 
+
 /*
-Newsletter
+Pricing
 */
-#newsletter {
-    text-align: center;
+
+.pricing-card {
+    border: solid 1px var(--color-1);
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 15px;
 }
 
-#newsletter p {
-    width: 600px;
-    margin: 0 auto;
+.pricing-features {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
 }
 
-.social-link {
-    padding: 15px;
-    color: #FFFFFF !important;
-}
-
-.newsletter-input {
-    border: none;
-    border-bottom: 2px solid #1E4132;
-    border-radius: 0% !important;
-    box-shadow: none;
-    text-align: center;
-}
-
-#newsletter .field {
-    width: 400px;
-    max-width: 80%;
-    padding: 20px;
-    margin: 0 auto;
-}
 
 /*
 Footer
 */
+
 #footer p {
     padding: 20px;
 }
 
 #footer a {
-    color: #FFFFFF !important;
+    color: var(--color-1) !important;
+}
+
+
+/******************
+    Auth Pages
+*****************/
+
+.auth-bg {
+    overflow-y: hidden !important;
+    background-image: url('../img/background.jpg') !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.app-form-div {
+    margin-top: 10%;
+}
+
+.app-card {
+    border: solid 1px #e2e8f0;
+    height: 100%
 }
