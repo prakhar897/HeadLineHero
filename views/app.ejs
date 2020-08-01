@@ -1,98 +1,115 @@
 <%- include('partials/header.ejs') %>
 
-    <body>
+<body>
 
-        <%- include('partials/navbar.ejs') %>
+<%- include('partials/navbar.ejs') %>
 
-            <div class="columns">
-                <div class="column is-one-quarter">
-                    <div class="container subtitle app-form-div">
-                        <h1> Variable </h1>
-                        <form action="/form" class="" method="post">
+<div class="columns">
+    <div class="column is-one-quarter">
+        <div class="container subtitle app-form-div">
+            <h1> Variable </h1>
+            <form action="/form" class="" method="post">
 
-                            <div class="field">
-                                <label class="label">What is your Product?</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="Product" placeholder="Headlime, Sketch" />
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">Who's your audience?</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="Audience" placeholder="Fathers, Doctors">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">What does your audience want?</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="Desired_Outcome" placeholder="Bigger Muscles, Higher Conversion Rate">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">What solution do you offer?</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="Solution" placeholder="Healthy Food, Faster Website">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">What problem does your audience have?</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="Problem" placeholder="Low Conversion Rate, High Operating Cost">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">Who is an authority in your industry?</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="Authority" placeholder="Google, Amazon, Influencers">
-                                </div>
-                            </div>
-                            <div>
-                                <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Next Step"><br />
-                            </div>
-                        </form>
+                <div class="field">
+                    <label class="label">What is your Product?</label>
+                    <div class="control">
+                        <input class="input" type="text" name="Product" placeholder="Headlime, Sketch" />
                     </div>
                 </div>
+                <div class="field">
+                    <label class="label">Who's your audience?</label>
+                    <div class="control">
+                        <input class="input" type="text" name="Audience" placeholder="Fathers, Doctors">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">What does your audience want?</label>
+                    <div class="control">
+                        <input class="input" type="text" name="Desired_Outcome" placeholder="Bigger Muscles, Higher Conversion Rate">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">What solution do you offer?</label>
+                    <div class="control">
+                        <input class="input" type="text" name="Solution" placeholder="Healthy Food, Faster Website">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">What problem does your audience have?</label>
+                    <div class="control">
+                        <input class="input" type="text" name="Problem" placeholder="Low Conversion Rate, High Operating Cost">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Who is an authority in your industry?</label>
+                    <div class="control">
+                        <input class="input" type="text" name="Authority" placeholder="Google, Amazon, Influencers">
+                    </div>
+                </div>
+                <div>
+                    <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Next Step"><br />
+                </div>
+            </form>
+        </div>
+    </div>
 
 
-                <div class="column is-three-quarter">
+    <div class="column is-three-quarter main-panel">
 
-                    <% for(i=0;i<quotes.length;i+=3){ %>
-                        <div class="columns">
-                            <div class="column is-one-third">
-                                <div class="card app-card">
-                                    <div class="card-content">
-                                        <p>
-                                            <%=quotes[i]%>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+        <% for(i=0;i<9;i+=3){ %>
+            <div class="columns">
+                <div class="column is-one-third">
+                    <%- include('partials/boxes/openbox.ejs',quote=quotes[i],label="Free") %>
+                </div>
 
-                            <div class="column is-one-third">
-                                <div class="card app-card">
-                                    <div class="card-content">
-                                        <p>
-                                            <%=quotes[i+1]%>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="column is-one-third">
+                    <%- include('partials/boxes/openbox.ejs',quote=quotes[i+1],label="Free") %>
+                </div>
 
-                            <div class="column is-one-third">
-                                <div class="card app-card">
-                                    <div class="card-content">
-                                        <p>
-                                            <%=quotes[i+2]%>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% } %>
-
-
-
+                <div class="column is-one-third">
+                    <%- include('partials/boxes/openbox.ejs',quote=quotes[i+2],label="Free") %>
                 </div>
             </div>
+        <% } %>
 
-            <%- include('partials/footer.ejs') %>
+        <% if(!currentUser && "Tru" == "True"){ %>
+
+            <% for(i=9;i<quotes.length;i+=3){ %>
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <%- include('partials/boxes/openbox.ejs',quote=quotes[i],label="Premium") %>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <%- include('partials/boxes/openbox.ejs',quote=quotes[i+1],label="Premium") %>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <%- include('partials/boxes/openbox.ejs',quote=quotes[i+2],label="Premium") %>
+                    </div>
+                </div>
+        <% }%>
+        <%} else { %>
+
+            <% for(i=9;i<quotes.length;i+=3){ %>
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <%- include('partials/boxes/lockbox.ejs',quotes_length = quotes.length, i=i) %>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <%- include('partials/boxes/lockbox.ejs',quotes_length = quotes.length, i=i) %>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <%- include('partials/boxes/lockbox.ejs',quotes_length = quotes.length, i=i) %>
+                    </div>
+                </div>
+            <% }%>
+        <% } %>
+
+
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

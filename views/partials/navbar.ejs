@@ -1,44 +1,54 @@
 <!-- Navigation-->
-<section id="hero" class="hero is-medium">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        <h3 class="logo has-text-green is-size-4">HeadlineHero</h3>
-                    </a>
-                </div>
+<section>
+    <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="img/headline.png" height="100%"/>
+                </a>
 
-                <div class="navbar-menu">
-                    <% if(!currentUser){ %>
-                        <div class="navbar-end">
-                            <a class="a-menu is-size-7 navbar-item" href="/billing">
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+            </div>
+
+            <div class="navbar-menu">
+                <% if(!currentUser){ %>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <a class="a-menu headline is-size-7 navbar-item" href="/billing">
                                 Buy Now
                             </a>
-                            <a class="a-menu is-size-7 navbar-item" href="/signup">
+                        </div>
+                        <div class="navbar-item">
+                            <a class="a-menu headline is-size-7 navbar-item" href="/signup">
                                 SignUp
                             </a>
-                            <a class="a-menu is-size-7 navbar-item" href="/login">
+                        </div>
+                        <div class="navbar-item">
+                            <a class="a-menu headline is-size-7 navbar-item" href="/login">
                                 Login
                             </a>
                         </div>
-                        <% } else {%>
-                            <div class="navbar-end">
-                                <a class="a-menu is-size-7 navbar-item" href="#">
-                                    <%=currentUser.email%>
-                                </a>
-                                <a class="a-menu is-size-7 navbar-item" href="/logout">
-                                Logout
+                    </div>
+                    <% } else {%>
+                        <div class="navbar-end">
+                            <a class="a-menu is-size-7 navbar-item" href="#">
+                                <%=currentUser.email%>
                             </a>
-                            </div>
-                            <% } %>
-                </div>
-                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                    <span></span>
-                <span></span>
-                <span></span>
-                </span>
+                            <a class="a-menu is-size-7 navbar-item" href="/logout">
+                            Logout
+                        </a>
+                        </div>
+                        <% } %>
             </div>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                <span></span>
+            <span></span>
+            <span></span>
+            </span>
         </nav>
     </div>
 </section>

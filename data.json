@@ -1,5 +1,6 @@
 {
     "headlines": [
+       
         "Tired of {Problem}? Get started with {Solution} Today!",
         "{Number} Ideas You can steal from {Authority}",
         "Let {Product} Work on Your {Problem} for Just {Period} - And You’ll See The Difference",
@@ -8,12 +9,53 @@
         "To the {Audience} Who Will Settle for Nothing Less Than {Desired_Outcome}",
         "{Audience}: It's time to stop {Problem}. Use {Solution}",
         "The Biggest (And Easiest) Secret of {Desired_Outcome}",
-        "Make {Desired Outcome} That Matter",
-        "{Number} of Authorities is Right/Wrong About {Desired_Outcome}",
+        "Make {Desired_Outcome} That Matter",
+        "{Number} Things {Authoritiy} is Right/Wrong About {Desired_Outcome}",
         "{Authority} show you how to {Desired_Outcome}",
         "Start saving money on {Desired_Outcome}",
         "{Problem} Shouldn't Be This Hard",
-        "Don't Make These {Number} {Problem} Mistakes"
+        "Don't Make These {Number} {Problem} Mistakes",
+        "Your Search for {Desired_Outcome} Ends Here",
+
+
+
+        "How to {Desired_Outcome}",
+        "{Number} of ways to achieve {Desired_Outcome}",
+        "The Ultimate Guide to achieve {Desired_Outcome}",
+        "Let's Stop {Problem}",
+        "Warning! Are you {Undesired_Outcome}",
+        "{Number} Proven Action/Ways to achieve {Desired_Outcome}",
+        "{Number} of secrets to achieve {Desired_Outcome}",
+        "How ignoring {Problem} can lead to {Undesired_Outcome}",
+        "How to achieve {Desired_Outcome} like {Authority}",
+        "{Number} of Simple/Easy Ways to {Desired_Outcome}",
+        "We analyzed {Number} of {Audience}, This is what we learned.",
+        "A {Power_Word} Tutorial to achieve {Desired_Outcome}",
+        "{Number} of Hacks to achieve {Desired_Outcome}",
+        "Why {Product} makes you {Desired_Outcome}",
+        "{Number} Of Steps to achieve {Desired_Outcome}",
+        "Stop {Undesired_Outcome}",
+        "{Number} of reasons you're {Desired_Outcome}",
+        "Imagine {Desired_Outcome}",
+        "Why {Problem} and what to do about it.",
+        "Can you find the problem with {Authority}",
+        "How we did {Desired_Outcome} in {Period}",
+        "{Audience}! Are You {Undesired_Outcome}",
+
+
+
+        "How {Solution} makes {Desired_Outcome}",
+        "Do You Recognize the {Number} Signs Of {Problem}",
+        "{Number} Types Of {Audience} - Which one are You?",
+        "{Product} tells you {Number} Secrets of {Problem}",
+        "Who else wants {Desired_Outcome}",
+        "The secret of {Desired_Outcome}"
+
+
+
+
+
+
     ],
     "fields": [
         "Problem",
@@ -23,6 +65,9 @@
         "Desired_Outcome",
         "Product",
         "Number",
-        "Period"
+        "Period",
+        "Undesired_Outcome",
+        "Power_Word"
+
     ]
 }
