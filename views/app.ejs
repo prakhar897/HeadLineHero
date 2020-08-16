@@ -9,54 +9,51 @@
         <div class="container subtitle app-form-div">
             <h1> Variable </h1>
             <form action="/form" class="" method="post">
-
                 <div class="field">
-                    <label class="label">What is your Product?</label>
-                    <div class="control">
-                        <input class="input" type="text" name="Product" placeholder="Headlime, Sketch" />
-                    </div>
+                  <label class="label headline">Enter Keyword*</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      name="Keyword"
+                      placeholder="Keyword"
+                      required
+                    />
+                  </div>
                 </div>
                 <div class="field">
-                    <label class="label">Who's your audience?</label>
-                    <div class="control">
-                        <input class="input" type="text" name="Audience" placeholder="Fathers, Doctors">
-                    </div>
+                  <label for="categories" class="label headline">Choose Category:</label>
+                  <div class="select is-fullwidth">
+                      <select id="categories" name="categories">
+                          <option value="All">All</option>
+                          <option value="brand">is a brand</option>
+                          <option value="generic">is a generic term</option>
+                          <option value="event">is an event</option>
+                          <option value="location">is a location</option>
+                          <option value="industry">is an industry</option>
+                          <option value="person">is a person's name</option>
+                          <option value="skill">is a skill</option>
+                      </select>
+                  </div>
                 </div>
-                <div class="field">
-                    <label class="label">What does your audience want?</label>
-                    <div class="control">
-                        <input class="input" type="text" name="Desired_Outcome" placeholder="Bigger Muscles, Higher Conversion Rate">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">What solution do you offer?</label>
-                    <div class="control">
-                        <input class="input" type="text" name="Solution" placeholder="Healthy Food, Faster Website">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">What problem does your audience have?</label>
-                    <div class="control">
-                        <input class="input" type="text" name="Problem" placeholder="Low Conversion Rate, High Operating Cost">
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Who is an authority in your industry?</label>
-                    <div class="control">
-                        <input class="input" type="text" name="Authority" placeholder="Google, Amazon, Influencers">
-                    </div>
-                </div>
+  
+                
+  
                 <div>
-                    <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Next Step"><br />
+                  <input
+                    class="button is-block is-primary is-large is-fullwidth"
+                    type="submit"
+                    value="Submit"
+                  /><br />
                 </div>
-            </form>
+              </form>
         </div>
     </div>
 
 
     <div class="column is-three-quarter main-panel">
 
-        <% for(i=0;i<9;i+=3){ %>
+        <% for(i=0;i<18;i+=3){ %>
             <div class="columns">
                 <div class="column is-one-third">
                     <%- include('partials/boxes/openbox.ejs',quote=quotes[i],label="Free") %>
@@ -72,7 +69,7 @@
             </div>
         <% } %>
 
-        <% if(!currentUser && "Tru" == "True"){ %>
+        <% if(currentUser && (currentUser.sub_monthly.active == true || currentUser.sub_yearly.active == true || currentUser.sub_lifetime.active == true)){ %>
 
             <% for(i=9;i<quotes.length;i+=3){ %>
                 <div class="columns">

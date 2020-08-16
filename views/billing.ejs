@@ -2,167 +2,139 @@
 
     <%- include('partials/navbar.ejs') %>
 
-        <section class="section has-mustard-bg">
-            <div class="container">
-                <div class="title-wrapper has-text-centered">
-                    <h2 class="title is-2">Pricing</h2>
-                    <h3 class="subtitle is-5 is-muted has-text-green">Get the power of a copywriter for life, without paying their $100 hourly rate.
-                    </h3>
-                </div>
+    <section class="section bg-alt">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2 headline">Pricing</h2>
+                <h3 class="subtitle is-5 is-muted paragraph">Get the power of a copywriter for life, without paying their $100 hourly rate.
+                </h3>
+            </div>
 
-                <div class="content-wrapper">
-                    <div class="columns">
-                        <div class="column pricing-card">
-                            <div class="feature-card is-bordered has-text-centered">
-                                <div class="card-title">
-                                    <h1>Monthly</h1>
-                                    <h2><strong>9$</strong></h2>
-                                </div>
-                                <div class="card-text pricing-features">
-                                    <ul class="pricing-features">
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any time
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Hundreds of headlines
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Save 20% yearly
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Lifetime money back guarantee
-                                        </li>
-                                    </ul>
-                                </div>
-                                <br/>
-                                <div class="card-action">
-                                    <button onclick="gotoCheckout()">Buy Now</button>
-                                </div>
+            <div class="content-wrapper">
+                <div class="columns">
+                    <div class="column pricing-card bg">
+                        <div class="feature-card is-bordered has-text-centered">
+                            <div class="card-title">
+                                <h1>Monthly</h1>
+                                <h2><strong>9$</strong></h2>
+                            </div>
+                            <div class="card-text pricing-features">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any time
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Hundreds of headlines
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Save 20% yearly
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Lifetime money back guarantee
+                                    </li>
+                                </ul>
+                            </div>
+                            <br/>
+                            <div class="card-action">
+                                <% if(!sub_monthly_active){ %>
+                                    <button class="button is-primary btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_monthly %>')>Buy Now</a>
+                                <%}else{%>
+                                    <form action='/cancel-sub-monthly' method='post'>
+                                        <input class="button is-primary btn-align-md accent-btn raised" type='submit' value = " Cancel Subscription" />
+                                    </form>
+                                <%}%>
                             </div>
                         </div>
-                        <div class="column pricing-card">
-                            <div class="feature-card is-bordered has-text-centered">
-                                <div class="card-title">
-                                    <h1>Monthly</h1>
-                                    <h2><strong>9$</strong></h2>
-                                </div>
-                                <div class="card-text pricing-features">
-                                    <ul class="pricing-features">
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any time
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Hundreds of headlines
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Save 20% yearly
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Lifetime money back guarantee
-                                        </li>
-                                    </ul>
-                                </div>
-                                <br/>
-                                <div class="card-action">
-                                    <button onclick="gotoCheckout2()">Buy Now</button>
-                                </div>
+                    </div>
+                    <div class="column pricing-card2 bg">
+                        <div class="feature-card is-bordered has-text-centered">
+                            <div class="card-title">
+                                <h1>Yearly</h1>
+                                <h2><strong>89$</strong></h2>
+                            </div>
+                            <div class="card-text pricing-features">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any time
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Hundreds of headlines
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Save 20% yearly
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Lifetime money back guarantee
+                                    </li>
+                                </ul>
+                            </div>
+                            <br/>
+                            <div class="card-action">
+                                <% if(!sub_yearly_active){ %>
+                                    <button class="button is-primary btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_yearly %>')>Buy Now</a>
+                                <%}else{%>
+                                    <form action='/cancel-sub-yearly' method='post'>
+                                        <input class="button is-primary btn-align-md accent-btn raised" type='submit' value = " Cancel Subscription" />
+                                    </form>
+                                <%}%>
                             </div>
                         </div>
-                        <div class="column pricing-card">
-                            <div class="feature-card is-bordered has-text-centered">
-                                <div class="card-title">
-                                    <h1>Monthly</h1>
-                                    <h2><strong>9$</strong></h2>
-                                </div>
-                                <div class="card-text pricing-features">
-                                    <ul class="pricing-features">
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any time
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Hundreds of headlines
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Save 20% yearly
-                                        </li>
-                                        <li>
-                                            <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Lifetime money back
-                                        </li>
-                                    </ul>
-                                </div>
-                                <br/>
-                                <div class="card-action">
-                                    <button class="button btn-align-md accent-btn raised" onclick="gotoCheckout3()">Buy Now</button>
-                                </div>
+                    </div>
+                    <div class="column pricing-card bg">
+                        <div class="feature-card is-bordered has-text-centered">
+                            <div class="card-title">
+                                <h1>Lifetime</h1>
+                                <h2><strong>129$</strong></h2>
+                            </div>
+                            <div class="card-text pricing-features">
+                                <ul class="pricing-features">
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any time
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Hundreds of headlines
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Save 20% yearly
+                                    </li>
+                                    <li>
+                                        <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Lifetime money back
+                                    </li>
+                                </ul>
+                            </div>
+                            <br/>
+                            <div class="card-action">
+                                <% if(!sub_ltd_active){ %>
+                                    <button class="button is-primary btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_ltd %>')>Buy Now</a>
+                                <%}else{%>
+                                    <button class="button is-primary btn-align-md accent-btn raised" >LifeTime Deal Subscribed !!!</a>
+                                <%}%>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- END Pricing -->
+        </div>
+    </section>
 
-        <!-- Stripe Setup-->
-        <script src="https://js.stripe.com/v3/"></script>
-        <script>
-            var stripe = Stripe('<%= STRIPE_PUBLIC_KEY %>');
+    <!-- Stripe Setup-->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('<%= STRIPE_PUBLIC_KEY %>');
 
-            function gotoCheckout() {
-                stripe.redirectToCheckout({
-                    // Make the id field from the Checkout Session creation API response
-                    // available to this file, so you can provide it as parameter here
-                    // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-                    sessionId: '<%= sessionId_monthly %>'
-                }).then(function(result) {
-                    // If `redirectToCheckout` fails due to a browser or network
-                    // error, display the localized error message to your customer
-                    // using `result.error.message`.
-                });
-            }
+        function gotoCheckout(sessionId){
+            stripe.redirectToCheckout({sessionId:sessionId});
+        }
+    </script>
+    <!-- END Stripe Setup-->
 
-            function gotoCheckout2() {
-                stripe.redirectToCheckout({
-                    // Make the id field from the Checkout Session creation API response
-                    // available to this file, so you can provide it as parameter here
-                    // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-                    sessionId: '<%= sessionId_yearly %>'
-                }).then(function(result) {
-                    // If `redirectToCheckout` fails due to a browser or network
-                    // error, display the localized error message to your customer
-                    // using `result.error.message`.
-                });
-            }
-
-            function gotoCheckout3() {
-                stripe
-                    .redirectToCheckout({
-                        lineItems: [
-                            // Replace with the ID of your price
-                            {
-                                price: 'price_1H8SWDGtWPgqQ5gYXUU06h7Q',
-                                quantity: 1
-                            },
-                        ],
-                        mode: 'payment',
-                        successUrl: 'http://localhost:3000/billing',
-                        cancelUrl: 'https://localhost:3000/',
-                    })
-                    .then(function(result) {
-                        // If `redirectToCheckout` fails due to a browser or network
-                        // error, display the localized error message to your customer
-                        // using `result.error.message`.
-                    });
-            }
-        </script>
-        <!-- END Stripe Setup-->
-
-        <%- include('partials/footer.ejs') %>
+    <%- include('partials/footer.ejs') %>

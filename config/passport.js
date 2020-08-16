@@ -3,19 +3,22 @@ const bcrypt = require('bcrypt');
 
 // Load User model
 const User = require('../models/user');
+const User2 = require('../models/user2');
 
 module.exports = function(passport) {
   
     passport.use('local',new LocalStrategy({
         usernameField: "email",
-        passwordField: "password"
-    }, function(email, password, next) {
+        passwordField: "password",
+        passReqToCallback : true 
+    }, function(req,email, password, next) {
         User.findOne({
             email: email
         }, function(err, user) {
-            if (err) return console.log(err);
-            if (!user || !bcrypt.compareSync(password, user.passwordHash)) {
-                return next('Email or password incorrect');
+            if (err) return next({'message':err});
+            if(!user) return next(null, false, req.flash('loginMessage', 'No user found.'));
+            if (!bcrypt.compareSync(password, user.passwordHash)) {
+                return next(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
             }
             next(null, user);
         });
@@ -23,13 +26,24 @@ module.exports = function(passport) {
 
     passport.use('signup-local',new LocalStrategy({
         usernameField: "email",
-        passwordField: "password"
-    }, function(email, password, next) {
+        passwordField: "password",
+        passReqToCallback : true 
+    }, function(req,email, password, next) {
         User.findOne({
             email:email
         },function(err,user){
             if(err) return next(err);
-            if(user) return next("User already exists");
+            if(user) return next(null, false, req.flash('signupMessage', 'User already exists'));
+
+            let newUser2 = new User2({
+                email:email,
+                passwordHash: password
+            });
+            
+            newUser2.save(function(err){
+                next(err,newUser2);
+            });
+
             let newUser = new User({
                 email: email,
                 passwordHash: bcrypt.hashSync(password,10)

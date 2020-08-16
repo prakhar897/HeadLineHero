@@ -1,11 +1,12 @@
 module.exports = function(app, passport) {
     app.get('/signup',function(req,res,next){
-        res.render('signup');
+        res.render('signup',{message: req.flash('signupMessage')});
     });
 
     app.post('/signup',
         passport.authenticate('signup-local', {
             successRedirect: '/form', 
+            failureFlash : true,
             failureRedirect: '/signup' 
         })
     );
@@ -13,13 +14,14 @@ module.exports = function(app, passport) {
 
 
     app.get('/login',function(req,res,next){
-        res.render('login');
+        res.render('login',{message: req.flash('loginMessage')});
     });
 
     app.post('/login',
         passport.authenticate('local', {
             successRedirect: '/billing', 
-            failureRedirect: '/login' 
+            failureFlash : true,
+            failureRedirect: '/login',
         })
     );
 

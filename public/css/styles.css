@@ -144,11 +144,6 @@ Wrapper
 Some aesthetic improvements
 */
 
-nav {
-    padding-top: 20px;
-    max-height: 50px;
-}
-
 .feature-subtext {
     width: 600px;
     line-height: 1.5em;
@@ -313,17 +308,6 @@ Footer
     Auth Pages
 *****************/
 
-.auth-bg {
-    overflow-y: hidden !important;
-    background-image: url('../img/background.jpg') !important;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .app-form-div {
     margin-top: 10%;
 }
@@ -350,6 +334,7 @@ Footer
 .main-panel {
     margin-top: 30px;
     border-left: solid 1px #e2e8f0;
+    overflow-y: auto;  
 }
 
 .app-card-title {
@@ -360,3 +345,29 @@ Footer
     margin-top: 0;
     margin-bottom: 5%;
 }
+
+.auth-bg {
+    background-size: cover;
+    background: linear-gradient(0deg, rgba(186,232,232,1) 41%, rgba(255,255,254,1) 92%);
+    height: 100%;
+    overflow: hidden;
+}
+
+.box-form {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px 20px 20px 20px;
+    margin-top: 50px;
+}
+
+.centre-div{
+    top:50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    position: absolute;
+}
+
+
+
+
+
+

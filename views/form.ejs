@@ -1,76 +1,57 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Aldi Duzha" />
-    <meta name="description" content="Free Bulma Login Template, part of Awesome Bulma Templates" />
-    <meta name="keywords" content="bulma, login, page, website, template, free, awesome" />
-    <title>Bulma Login - Free Bulma Template</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/styles_login.css" />
-</head>
+<%- include('partials/header.ejs') %>
 
 <body class="auth-bg">
+  <%- include('partials/navbar.ejs') %>
 
-    <%- include('partials/navbar.ejs') %>
-
-        <section class="hero is-fullheight">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-4 is-offset-4">
-                        <div class="box">
-                            <form action="/form" class="" method="post">
-
-                                <div class="field">
-                                    <label class="label">What is your Product?</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Product" placeholder="Headlime, Sketch" />
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Who's your audience?</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Audience" placeholder="Fathers, Doctors">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">What does your audience want?</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Desired_Outcome" placeholder="Bigger Muscles, Higher Conversion Rate">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">What solution do you offer?</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Solution" placeholder="Healthy Food, Faster Website">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">What problem does your audience have?</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Problem" placeholder="Low Conversion Rate, High Operating Cost">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Who is an authority in your industry?</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Authority" placeholder="Google, Amazon, Influencers">
-                                    </div>
-                                </div>
-                                <div>
-                                    <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Next Step"><br />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+  <section>
+    <div>
+      <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+          <div class="box-form">
+            <form action="/form" class="" method="post">
+              <div class="field">
+                <label class="label headline">Enter Keyword*</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    name="Keyword"
+                    placeholder="Keyword"
+                    required
+                  />
                 </div>
-            </div>
-        </section>
+              </div>
+              <div class="field">
+                <label for="categories" class="label headline">Choose Category:</label>
+                <div class="select">
+                    <select id="categories" name="categories">
+                        <option value="All">All</option>
+                        <option value="brand">is a brand</option>
+                        <option value="generic">is a generic term</option>
+                        <option value="event">is an event</option>
+                        <option value="location">is a location</option>
+                        <option value="industry">is an industry</option>
+                        <option value="person">is a person's name</option>
+                        <option value="skill">is a skill</option>
+                    </select>
+                </div>
+              </div>
 
-        <%- include('partials/footer.ejs') %>
+              
+
+              <div>
+                <input
+                  class="button is-block is-primary is-large is-fullwidth"
+                  type="submit"
+                  value="Next Step"
+                /><br />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer.ejs') %>
+</body>

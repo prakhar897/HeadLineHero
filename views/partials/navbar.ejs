@@ -1,55 +1,56 @@
 <!-- Navigation-->
-<section>
-    <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    <img src="img/headline.png" height="100%"/>
-                </a>
-
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                  </a>
-            </div>
-
-            <div class="navbar-menu">
-                <% if(!currentUser){ %>
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <a class="a-menu headline is-size-7 navbar-item" href="/billing">
-                                Buy Now
-                            </a>
-                        </div>
-                        <div class="navbar-item">
-                            <a class="a-menu headline is-size-7 navbar-item" href="/signup">
-                                SignUp
-                            </a>
-                        </div>
-                        <div class="navbar-item">
-                            <a class="a-menu headline is-size-7 navbar-item" href="/login">
-                                Login
-                            </a>
-                        </div>
-                    </div>
-                    <% } else {%>
-                        <div class="navbar-end">
-                            <a class="a-menu is-size-7 navbar-item" href="#">
-                                <%=currentUser.email%>
-                            </a>
-                            <a class="a-menu is-size-7 navbar-item" href="/logout">
-                            Logout
-                        </a>
-                        </div>
-                        <% } %>
-            </div>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                <span></span>
-            <span></span>
-            <span></span>
-            </span>
-        </nav>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="img/headline.png" height="100%" class="nav-img" />
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-</section>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+      <div class="navbar-item">
+        <a class="button is-danger is-light is-fullwidth" href="/">
+          PRODUCT HUNT
+        </a>
+      </div>
+      <% if(!currentUser){ %>
+        <div class="navbar-item">
+          <a class="button is-info is-light is-fullwidth" href="/signup">
+            SIGNUP
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a class="button is-primary is-light is-fullwidth" href="/login">
+            LOGIN
+          </a>
+        </div>
+        
+      <% } else {%>
+      <div class="navbar-item">
+        <a class="button is-danger is-light is-fullwidth" href="#">
+          <%=currentUser.email%>
+        </a>
+      </div>
+      <div class="navbar-item">
+        <a class="button is-danger is-light is-fullwidth" href="/logout">
+          Logout
+        </a>
+      </div>
+      <% } %>
+      <div class="navbar-item">
+        <a class="button is-danger is-light is-fullwidth" href="/billing">
+          BUY NOW
+        </a>
+      </div>
+    </div>
+    </div>
+  </nav>
+
 <!-- END Navigation -->
+
+

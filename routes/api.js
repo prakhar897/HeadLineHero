@@ -1,9 +1,10 @@
 var router = require('express').Router();
-var dataFields = require('../data.json');
+var data = require('../config/data.js');
 
 router.get('/', function(req, res) {
     res.render('index');
 });
+
 
 router.get('/main', function(req, res) {
     res.render('main');
@@ -14,20 +15,26 @@ router.get('/form', function(req, res, next) {
 });
 
 router.post('/form', function(req, res, next) {
-    arr = []
-    for (i in dataFields.headlines) {
-        str = dataFields.headlines[i];
-        for (j in dataFields.fields) {
-            if (dataFields.fields[j] == "Number")
-                str = str.replace("{" + dataFields.fields[j] + "}", (Math.floor(Math.random() * (13 - 3)) + 3));
-            else if (dataFields.fields[j] == "Period")
-                str = str.replace("{" + dataFields.fields[j] + "}", ((Math.floor(Math.random() * (13 - 3)) + 3)) + " Days ");
-            else
-                str = str.replace("{" + dataFields.fields[j] + "}", req.body[dataFields.fields[j]]);
-        }
-        arr.push(str);
+    console.log(req.body);
+    titles = []
+
+    if(req.body.categories == "All"){
+        for(key in data){
+            titles = titles.concat(data[key]);
+        } 
+
+        title_set = new Set(titles);
+        titles = Array.from(title_set);
     }
-    res.render('app', quotes = arr);
+    else{
+        titles = data[req.body.categories]
+    }
+
+    for(var i=0;i< titles.length;i++){
+        titles[i] = titles[i].replace("{Keyword}",req.body.Keyword);
+    }
+
+    res.render('app', quotes = titles);
 });
 
 module.exports = router;
