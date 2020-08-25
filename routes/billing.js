@@ -58,9 +58,9 @@ router.get("/billing", middlewares.isLoggedIn, async function (req, res, next) {
     sessionId_monthly: session_monthly.id,
     sessionId_yearly: session_yearly.id,
     sessionId_ltd: session_ltd.id,
-	sub_monthly_active: req.user.sub_monthly.active,
-	sub_yearly_active: req.user.sub_yearly.active,
-	sub_ltd_active: req.user.sub_lifetime.active,
+	  sub_monthly_active: req.user.sub_monthly.active,
+	  sub_yearly_active: req.user.sub_yearly.active,
+	  sub_ltd_active: req.user.sub_lifetime.active,
   });
 });
 

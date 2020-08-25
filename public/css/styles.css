@@ -107,6 +107,10 @@ ul {
     text-align: left;
 }
 
+html {
+    height: 100%;
+}
+
 
 /*
 Links
@@ -144,9 +148,12 @@ Wrapper
 Some aesthetic improvements
 */
 
-.feature-subtext {
-    width: 600px;
-    line-height: 1.5em;
+.feature{
+    margin-bottom : 8%;
+}
+
+.headline-div{
+    margin-bottom : 4%;
 }
 
 
@@ -269,7 +276,7 @@ Pricing
     border-radius: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
-    box-shadow: 5px 10px 10px 5px;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 .pricing-card2 {
@@ -281,7 +288,7 @@ Pricing
     border-radius: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
-    box-shadow: 10px 20px 20px 10px;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 .pricing-features {
@@ -309,7 +316,12 @@ Footer
 *****************/
 
 .app-form-div {
-    margin-top: 10%;
+    position:fixed;
+    height:100%;
+    width: 20%;
+    left:2%;
+    top:8%;
+    z-index:1;
 }
 
 .app-card {
@@ -347,10 +359,9 @@ Footer
 }
 
 .auth-bg {
-    background-size: cover;
     background: linear-gradient(0deg, rgba(186,232,232,1) 41%, rgba(255,255,254,1) 92%);
     height: 100%;
-    overflow: hidden;
+    background-size: cover;
 }
 
 .box-form {
@@ -364,6 +375,10 @@ Footer
     left: 50%;
     transform: translate3d(-50%,-50%, 0);
     position: absolute;
+}
+
+.select, .select select{ 
+    width: 100%;
 }
 
 

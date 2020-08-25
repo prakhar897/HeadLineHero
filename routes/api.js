@@ -15,10 +15,12 @@ router.get('/form', function(req, res, next) {
 });
 
 router.post('/form', function(req, res, next) {
-    console.log(req.body);
     titles = []
+    console.log(req.body);
+    var Keyword = req.body.Keyword;
+    var Categories = req.body.categories;
 
-    if(req.body.categories == "All"){
+    if(Categories == "All"){
         for(key in data){
             titles = titles.concat(data[key]);
         } 
@@ -27,13 +29,12 @@ router.post('/form', function(req, res, next) {
         titles = Array.from(title_set);
     }
     else{
-        titles = data[req.body.categories]
+        titles = data[Categories]
     }
 
     for(var i=0;i< titles.length;i++){
-        titles[i] = titles[i].replace("{Keyword}",req.body.Keyword);
+        titles[i] = titles[i].replace("{Keyword}","<strong>"+Keyword+"</strong>");
     }
-
     res.render('app', quotes = titles);
 });
 
