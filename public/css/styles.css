@@ -269,6 +269,11 @@ Pricing
 
 .pricing-card {
     
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-bottom: 3px solid #adb5bd;
+    box-shadow: 0 0 3px rgba(0,0,0,.15)!important;
+    border-radius: 10px!important;
     border: solid 1px var(--color-1);
     margin-top: 30px;
     margin-left: 10px;
@@ -276,25 +281,34 @@ Pricing
     border-radius: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
-    box-shadow: 1px 1px 1px 1px;
+    text-align: left;
 }
 
-.pricing-card2 {
+.pricing-title{
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase!important;
+    margin-bottom: 1.5rem!important;
     
-    border: solid 1px var(--color-1);
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 15px;
-    border-radius: 10px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-shadow: 1px 1px 1px 1px;
+    line-height: 1.5;
 }
 
-.pricing-features {
-    margin-left: auto;
-    margin-right: auto;
-    display: table;
+.pricing-number{
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 0!important;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+
+}
+
+.pricing-symbol{
+    line-height: 1.5;
+    font-weight: 600;
+    margin-top: .5rem!important;
+    margin-bottom: 0!important;
+    font-size: 1.5rem;
+    box-sizing: border-box;
 }
 
 

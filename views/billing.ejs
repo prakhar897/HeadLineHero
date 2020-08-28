@@ -11,114 +11,119 @@
         <div class="container">
             <div class="columns">
 
-                <div class="column pricing-card bg-alt">
-                    <div class="feature-card is-bordered has-text-centered">
-                        <div class="card-title">
-                            <h1>Monthly</h1>
-                            <h2><strong>9$</strong></h2>
-                        </div>
-                        <div class="card-text pricing-features">
-                            <ul class="pricing-features">
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Over 1500 Headlines
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Generate More Revenue per post
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Easy to Use Interface
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any Time
-                                </li>
-                            </ul>
-                        </div>
-                        <br/>
-                        <div class="card-action">
-                            <% if(!sub_monthly_active){ %>
-                                <button class="button is-primary btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_monthly %>')>Buy Now</a>
-                            <%}else{%>
-                                <form action='/cancel-sub-monthly' method='post'>
-                                    <input class="button is-primary btn-align-md accent-btn raised" type='submit' value = " Cancel Subscription" />
-                                </form>
-                            <%}%>
-                        </div>
+                <div class="column pricing-card">
+                    <h1 class="pricing-title headline"> Monthly </h1>
+                    <div>
+                        <span class="pricing-number"> 3 </span>
+                        <span class="pricing-symbol"> $ </span>
                     </div>
-                </div>
+                        
+                    <ul class="pricing-features">
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Over 1500 Headlines
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Tested to ensure quality
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Generate More Revenue per post
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Easy to Use Interface
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Cancel Any Time
+                        </li>
+                    </ul>
+                    
+                    <br/>
 
-                <div class="column pricing-card2 bg-alt">
-                    <div class="feature-card is-bordered has-text-centered">
-                        <div class="card-title">
-                            <h1>Yearly</h1>
-                            <h2><strong>89$</strong></h2>
-                        </div>
-                        <div class="card-text pricing-features">
-                            <ul class="pricing-features">
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Over 1500 Headlines
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Generate More Revenue per post
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Easy to Use Interface
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any Time
-                                </li>
-                            </ul>
-                        </div>
-                        <br/>
-                        <% if(!sub_yearly_active){ %>
-                            <button class="button is-primary btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_yearly %>')>Buy Now</a>
+                    <div>
+                        <% if(!sub_monthly_active){ %>
+                            <button class="button is-primary is-fullwidth btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_monthly %>')>Buy Now</a>
                         <%}else{%>
-                            <form action='/cancel-sub-yearly' method='post'>
-                                <input class="button is-primary btn-align-md accent-btn raised" type='submit' value = " Cancel Subscription" />
+                            <form action='/cancel-sub-monthly' method='post'>
+                                <input class="button is-primary is-fullwidth btn-align-md accent-btn raised" type='submit' value = " Cancel Subscription" />
                             </form>
                         <%}%>
                     </div>
+                    
                 </div>
 
-                <div class="column pricing-card bg-alt">
-                    <div class="feature-card is-bordered has-text-centered">
-                        <div class="card-title">
-                            <h1>Lifetime Deal (Limited)</h1>
-                            <h2><strong>129$</strong></h2>
-                        </div>
-                        <div class="card-text pricing-features">
-                            <ul class="pricing-features">
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Over 1500 Headlines
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Tested to ensure quality
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Generate More Revenue per post
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Easy to Use Interface
-                                </li>
-                                <li>
-                                    <img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" width="15px" /> Cancel Any Time
-                                </li>
-                            </ul>
-                        </div>
-                        <br/>
-                        <div class="card-action">
-                            <% if(!sub_ltd_active){ %>
-                                <button class="button is-primary btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_ltd %>')>Buy Now</a>
-                            <%}else{%>
-                                <button class="button is-primary btn-align-md accent-btn raised" >LifeTime Deal Subscribed !!!</a>
-                            <%}%>
-                        </div>
+                <div class="column pricing-card">
+                    <h1 class="pricing-title headline"> Yearly </h1>
+                    <div>
+                        <span class="pricing-number"> 19 </span>
+                        <span class="pricing-symbol"> $ </span>
                     </div>
+                        
+                    <ul class="pricing-features">
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Over 1500 Headlines
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Tested to ensure quality
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Generate More Revenue per post
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Easy to Use Interface
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Cancel Any Time
+                        </li>
+                    </ul>
+                    
+                    <br/>
+                    
+                    <div>
+                        <% if(!sub_yearly_active){ %>
+                            <button class="button is-primary is-fullwidth btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_yearly %>')>Buy Now</a>
+                        <%}else{%>
+                            <form action='/cancel-sub-yearly' method='post'>
+                                <input class="button is-primary is-fullwidth btn-align-md accent-btn raised" type='submit' value = " Cancel Subscription" />
+                            </form>
+                        <%}%>
+                    </div>
+                    
+                </div>
+
+                <div class="column pricing-card">
+                    <h1 class="pricing-title headline"> LifeTime </h1>
+                    <div>
+                        <span class="pricing-number"> 59 </span>
+                        <span class="pricing-symbol"> $ </span>
+                    </div>
+                        
+                    <ul class="pricing-features">
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Over 1500 Headlines
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Tested to ensure quality
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Generate More Revenue per post
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Easy to Use Interface
+                        </li>
+                        <li>
+                            <img src="img/tick.png" width="15px" /> Cancel Any Time
+                        </li>
+                    </ul>
+                    
+                    <br/>
+                    
+                    <div>
+                        <% if(!sub_ltd_active){ %>
+                            <button class="button is-primary is-fullwidth btn-align-md accent-btn raised" onclick=gotoCheckout('<%= sessionId_ltd %>')>Buy Now</a>
+                        <%}else{%>
+                            <button class="button is-primary is-fullwidth btn-align-md accent-btn raised" >LifeTime Deal Subscribed !!!</a>
+                        <%}%>
+                    </div>
+                    
                 </div>
 
             </div>
