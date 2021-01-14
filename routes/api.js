@@ -7,6 +7,7 @@ router.get('/', function(req, res) {
 
 
 router.get('/main', function(req, res) {
+    res.header("Cache-Control", "no-cache, no-store");
     res.render('main');
 });
 
